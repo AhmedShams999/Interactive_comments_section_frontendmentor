@@ -535,7 +535,7 @@ function load(){
 
 function userEntry(){
   user.children[0].children[4].addEventListener('click',()=>{
-    if(userName == "" || user.children[0].children[1].files[0] == null){
+    if(user.children[0].children[3].value == "" || user.children[0].children[1].files[0] == null){
       alert('please enter all your profile')
     }else{
       userPic = URL.createObjectURL(user.children[0].children[1].files[0]);
