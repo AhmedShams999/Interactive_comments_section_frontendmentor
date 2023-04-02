@@ -1,0 +1,23 @@
+{
+  "name": "interactive-comments-section-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Interactive comments section coding challenge](./design/desktop-preview.jpg)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhmedShams999/Interactive_comments_section_frontendmentor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AhmedShams999/Interactive_comments_section_frontendmentor/issues"
+  },
+  "homepage": "https://github.com/AhmedShams999/Interactive_comments_section_frontendmentor#readme",
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}

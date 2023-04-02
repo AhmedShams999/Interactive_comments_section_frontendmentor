@@ -1,11 +1,9 @@
 const commentText = document.querySelector('.comment_text');
 const sendBtn = document.querySelector('.send_btn');
-const okBtn = document.querySelector('.ok');
 const commentSection = document.querySelector('.comment_section');
 const addNote = document.querySelector('.add_note');
 const overllays = document.querySelectorAll('.overllay')
 const user = document.querySelector('.user-entry')
-
 
 //localStorage.clear()
 
@@ -73,6 +71,8 @@ let userName = "";
 let userPic = "";
 userEntry();
 load();
+let Now = new Date();
+
 
 
 function view(){
@@ -96,7 +96,7 @@ function view(){
               <img src="${comments[i].user.image.png}" alt="user-pic">
               <p class="user-name">${comments[i].user.username}</p>
               <p class="sign">You</p>
-              <p class="date">${comments[i].createdAt}</p>
+              <p class="date">${fromNow(comments[i].createdAt)}</p>
               <img class="delete-icon" src="./images/icon-delete.svg" alt="reply-icon">
               <p class="delete-btn">Delete</p>
               <img class="edit-icon" src="./images/icon-edit.svg" alt="reply-icon">
@@ -175,7 +175,7 @@ function view(){
                 <img src="${comments[i].user.image.png}" alt="user-pic">
                 <p class="user-name">${comments[i].user.username}</p>
                 <p class="sign">You</p>
-                <p class="date">${comments[i].createdAt}</p>
+                <p class="date">${fromNow(comments[i].createdAt)}</p>
                 <img class="delete-icon" src="./images/icon-delete.svg" alt="reply-icon">
                 <p class="delete-btn">Delete</p>
                 <img class="edit-icon" src="./images/icon-edit.svg" alt="reply-icon">
@@ -292,7 +292,7 @@ function replys(commentS){
         <img src="${replay.user.image.png}" alt="user-pic">
         <p class="user-name">${replay.user.username}</p>
         <p class="sign">You</p>
-        <p class="date">${replay.createdAt}</p>
+        <p class="date">${fromNow(replay.createdAt)}</p>
         <img class="delete-icon" src="./images/icon-delete.svg" alt="reply-icon">
         <p class="delete-btn">Delete</p>
         <img class="edit-icon" src="./images/icon-edit.svg" alt="reply-icon">
@@ -340,7 +340,7 @@ function createComment(text){
   const comment = {
     "id": Math.floor((Math.random() * 100000) + 1),
     "content": text.value,
-    "createdAt": "1 month ago",
+    "createdAt": Now,
     "score": 0,
     "user":{
       "image":{
@@ -356,7 +356,7 @@ function createReplay(text,index){
   const comment = {
     "id": Math.floor((Math.random() * 100000) + 1),
     "content": text,
-    "createdAt": "1 month ago",
+    "createdAt": Now,
     "score": 0,
     "user":{
       "image":{
@@ -552,3 +552,33 @@ sendBtn.addEventListener('click',()=>{
   createComment(commentText);
   view();
 })
+
+function fromNow(date, nowDate = Date.now(), rft = new Intl.RelativeTimeFormat(undefined, { numeric: "auto" })) {
+  const SECOND = 1000;
+  const MINUTE = 60 * SECOND;
+  const HOUR = 60 * MINUTE;
+  const DAY = 24 * HOUR;
+  const WEEK = 7 * DAY;
+  const MONTH = 30 * DAY;
+  const YEAR = 365 * DAY;
+  const intervals = [
+      { ge: YEAR, divisor: YEAR, unit: 'year' },
+      { ge: MONTH, divisor: MONTH, unit: 'month' },
+      { ge: WEEK, divisor: WEEK, unit: 'week' },
+      { ge: DAY, divisor: DAY, unit: 'day' },
+      { ge: HOUR, divisor: HOUR, unit: 'hour' },
+      { ge: MINUTE, divisor: MINUTE, unit: 'minute' },
+      { ge: 30 * SECOND, divisor: SECOND, unit: 'seconds' },
+      { ge: 0, divisor: 1, text: 'just now' },
+  ];
+  const now = typeof nowDate === 'object' ? nowDate.getTime() : new Date(nowDate).getTime();
+  const diff = now - (typeof date === 'object' ? date : new Date(date)).getTime();
+  const diffAbs = Math.abs(diff);
+  for (const interval of intervals) {
+      if (diffAbs >= interval.ge) {
+          const x = Math.round(Math.abs(diff) / interval.divisor);
+          const isFuture = diff < 0;
+          return interval.unit ? rft.format(isFuture ? x : -x, interval.unit) : interval.text;
+      }
+  }
+}
