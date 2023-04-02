@@ -5,7 +5,7 @@ const addNote = document.querySelector('.add_note');
 const overllays = document.querySelectorAll('.overllay')
 const user = document.querySelector('.user-entry')
 
-//localStorage.clear()
+localStorage.clear()
 
 let comments = [
   {
