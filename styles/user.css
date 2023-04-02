@@ -1,0 +1,34 @@
+main .user-entry{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .user-entry.hide {
+  display: none;
+}
+main .user-entry p{
+  font-size: 18px;
+  font-weight: 700;
+}
+main .user-entry .container input{
+  width: 400px;
+  text-align: center;
+  margin-bottom: 10px;
+  border: 1px solid rgb(163, 163, 163);
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+}
+main .user-entry  .container{
+  width: 600px;
+  height: 250px;
+}
+main .user-entry .container .upload{
+  width: 400px;
+  text-align: center;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 0;
+  font-size: 16px;
+  font-weight: 500;
+}

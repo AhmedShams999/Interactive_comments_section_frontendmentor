@@ -1,0 +1,47 @@
+@media screen and (max-width: 500px){
+
+  main{
+    width: 50%;
+  }
+  main .add_note{
+    width: 390px;
+    font-size: 15px;
+  }
+  main .add_note .text{
+    flex: 2;
+  
+  }
+  main .add_note .send_btn button{
+    height: 50px;
+    width: 70px;
+  }
+  main .comment_section .comment .user-comment{
+    width: 360px;
+    height: fit-content;
+    flex-direction: column;
+  }
+  main .comment_section .comment .user-comment .up-down-vote{
+    flex-direction: row;
+    width: 100px;
+    height: 30px;
+    margin-bottom: 15px;
+  }
+  main .comment_section .comment .user-comment .user{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+   
+  }
+  main .comment_section .comment .user-comment .user .info .date{
+   font-size: 13px;
+ }
+  main .comment_section .comment .user-comment .user .info .delete-btn,
+  main .comment_section .comment .user-comment .user .info .edit-btn{
+    font-size: 12px;
+
+  }
+  main .comment_section .comment .user-comment .user .info .delete-icon{
+    margin-left: 5px;
+  }
+}

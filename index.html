@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="./styles/mobile_view.css">
+  <link rel="stylesheet" href="./styles/user.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive comments section</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main>
+      <div class="comment_section">
+          <!-- <div class="comment">
+            <div class="user-comment">
+              <div class="up-down-vote">
+                <p class="up">+</p>
+                <p class="num">5</p>
+                <p class="down">-</p>
+              </div>
+              
+              <div class="user">
+                <div class="info">
+                  <img src="./Negen.png" alt="user-pic">
+                  <p class="user-name">Shams</p>
+                  <p class="date">1 month ago</p>
+                  <img class="replay-icon" src="./images/icon-reply.svg" alt="reply-icon">
+                  <p class="reply-btn">Replay</p>
+                </div>
+                <div class="text-c">
+                    comment 
+                </div>
+              </div>
+              
+            </div>
+            
+            <div class="replys">
+              <div class="line"></div>
+
+              <div class="replys-c">
+               
+                
+              </div>
+
+            </div>
+          </div> -->
+      </div>
+
+      <div class="add_note">
+        <div class="profile_pic">
+          <img src="./Negen.png" alt="pic">
+        </div>
+        <div class="text">
+          <textarea class="comment_text" name="" id="" cols="30" rows="10" placeholder="Add a comment..."></textarea>
+        </div>
+        <div class="send_btn">
+          <button>
+            SEND
+          </button>
+
+        </div>
+      </div>
+
+      <div class="edit-ovelay overllay">
+        <!-- <div class="container">
+          <textarea class="comment_text2" name="" id="" cols="30" rows="10" placeholder="Add your comment"></textarea>
+          <button> OK </button>
+        </div> -->
+      </div>
+
+      <div class="delete-ovelay overllay">
+        <!-- <div class="container">
+          <p>Are You Sure You Want To Delete Your comment !!</p>
+          <div>
+            <button> Yes </button>
+            <button> No </button>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="replay-ovelay overllay">
+        <!-- <div class="container">
+          <textarea class="comment_text2" name="" id="" cols="30" rows="10" placeholder="Add your comment"></textarea>
+          <button class="ok"> OK </button>
+        </div> -->
+      </div>
+
+      <div class="user-entry">
+        <div class="container">
+          <p>Select Your Profile Picture</p>  
+          <input class="upload" type="file" accept="image/jpeg, image/png, image/jpg">
+          <p>Enter Your UserName</p>
+          <input type="text">
+          <button class="ok"> OK </button>
+        </div> 
+      </div>
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/AhmedShams999">Ahmed_Shams</a>.
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
